@@ -378,6 +378,7 @@ def main():
                     Exp  = ns_pointing_i["Exp"]
                     Dith = ns_pointing_i['Dith']
                     Targ = ns_pointing_i['Target'].strip('.')
+                    Targ = Targ.replace('-','')
                     name = f'{Targ}_ns_{obs}_{visit}_{Exp}_{Dith}_regions'
                     s = f'{name}={ns_pixels_i}\n'
                     fpns.write(s)
@@ -396,6 +397,7 @@ def main():
                     Exp = nc_pointing_i["Exp"]
                     Dith = nc_pointing_i['Dith']
                     Targ = nc_pointing_i['Target'].strip('.')
+                    Targ = Targ.replace('-','')
                     name = f'{Targ}_nc_{obs}_{visit}_{Exp}_{Dith}_regions'
                     s = f'{name}={nc_pixels_i}\n'
                     fpnc.write(s)
