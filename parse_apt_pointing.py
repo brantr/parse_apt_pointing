@@ -388,6 +388,10 @@ def main():
                     fpns.write(s)
                     fpns.close()
 
+                    fpns = open(f'nirspec_boxes_only_{obs}_{visit}.txt','a')
+                    fpns.write(f'{ns_pixels_i}\n')
+                    fpns.close()
+
             if(flag_nc):
                 nc_poly_i, nc_pixels_i, nc_pointing_i = get_aperture_boxes(l,instrument='NC',prime=args.prime,wcs=wcs)
                 if(nc_pointing_i is not None):
@@ -407,7 +411,9 @@ def main():
                     fpnc.write(s)
                     fpnc.close()
 
-
+                    fpnc = open(f'nircam_boxes_only_{obs}_{visit}.txt','a')
+                    fpnc.write(f'{nc_pixels_i}\n')
+                    fpnc.close()
 
 
         k+=1
